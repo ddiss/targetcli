@@ -930,8 +930,8 @@ class UIPortals(UINode):
                                          + "create the Network Portal.")
                     return
         elif ip_address not in utils.list_eth_ips() and not listen_all:
-            self.shell.log.error("IP address does not exist: %s" % ip_address)
-            return
+            self.shell.log.warning("IP address %s does not exist on this host."
+                                   % ip_address)
 
         try:
             ip_port = int(ip_port)
